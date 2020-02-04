@@ -1,0 +1,52 @@
+{% if template contains 'product' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title }}",
+      "image": "{{ product.featured_image_url }}",
+      "description": "{{ product.description | replace: '"', '\\"' | strip_html }}",
+      "mpn": "{{ product.mpn_code }}",
+      "brand": {
+        "@type": "Thing",
+        "name": "{{ product.vendor }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "{{ shop.currency }}",
+				"price": "{% if shop.shopify_compatibility? %}{{ product.price | divided_by: 100.00 }}{% else %}{{ product.price }}{% endif %}",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ shop.name }}"
+        }
+      }
+    }
+	</script>
+{% endif %}
+{% if template contains 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "{{ shop.url }}",
+      "name": "{{ shop.name }}",
+      "alternateName": "{{ shop.description }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+  {% unless shop.logo_url contains 'undefined' %}
+		<script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "url": "{{ shop.url }}",
+        "logo": "{{ shop.logo_url }}"
+        }
+    </script>
+  {% endunless %}
+{% endif %}
