@@ -27,8 +27,6 @@ To use this Integration this file is used in the `<body>` element.
 ### email.liquid
 This file is empty because it's not needed for this integration.
 
-## Configuration options for this integration.
-
 ##  Customization
 * Create a developer account at [https://www.versacommerce.de/partner](https://www.versacommerce.de/partner?utm_source=github).
 * Create a free developer store.
