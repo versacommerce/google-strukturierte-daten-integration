@@ -1,5 +1,5 @@
 [<img src="versacommerce.png" width="250px" align="right" alt="VersaCommerce.de">](https://www.versacommerce.de/?utm_source=github)
-[<img src="google.png" width="90px" align="right" alt="developers.google.com">](https://developers.google.com/search/docs/guides/intro-structured-data?hl=en/?utm_source=www.versacommerce.de)
+[<img src="google.png" width="70px" align="right" alt="developers.google.com">](https://developers.google.com/search/docs/guides/intro-structured-data?hl=en/?utm_source=www.versacommerce.de)
 
 # Google strukturierte Daten Integration for VersaCommerce
 
